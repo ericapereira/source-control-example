@@ -21,5 +21,31 @@ public class guessingGame
         int guessCounter=0;
         int guess = 0;
 
+          while(keepGoing){
+           System.out.println("Please guess a number between 1 and 10");
+           int userInput = scan.nextInt();
+           guessCounter++;
+           System.out.println("UserInput: " + userInput);
+           if(userInput==randomNum){
+               System.out.println("WINNER");
+               keepGoing=false;
+            }else{
+               if(guessCounter==3){
+                  keepGoing=false; 
+               }
+               System.out.println("WRONG");
+           }
+            
+        }//end of inner while loop
+         System.out.println("Random number was " + randomNum);
+         //-----------------
+         System.out.println("Enter 1 to play again or 2 to exit");
+         int play = scan.nextInt();
+         if(play != 1){
+             playAgain=false;
+          }
+     }   
+
+
 }
 }
